@@ -2,7 +2,7 @@ services:
   - type: worker
     name: trail-bites-slack-bot
     env: node
-    buildCommand: pnpm install && pnpm run build
+    buildCommand: pnpm install && pnpm run build && test -f dist/index.js || (echo "ERROR: Build failed - dist/index.js not found" && exit 1)
     startCommand: pnpm start
     plan: free
     envVars:
