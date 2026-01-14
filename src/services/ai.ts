@@ -52,7 +52,7 @@ Be concise, helpful, and maintain a friendly tone. When creating documents or ca
     const completion = await openai.chat.completions.create({
       model: process.env.OPENAI_MODEL || 'gpt-5-mini',
       messages,
-      temperature: 0.7,
+      reasoning_effort: 'medium',
       max_completion_tokens: 1000,
     });
 
@@ -77,7 +77,7 @@ export async function summarizeText(text: string): Promise<string> {
           content: `Please provide a brief summary of the following text:\n\n${text}`,
         },
       ],
-      temperature: 0.5,
+      reasoning_effort: 'medium',
       max_completion_tokens: 300,
     });
 
