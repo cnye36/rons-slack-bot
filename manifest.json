@@ -1,0 +1,80 @@
+{
+  "display_information": {
+    "name": "Trail Bites AI Assistant",
+    "description": "AI-powered Slack assistant for Trail Bites community with canvas, document, and message capabilities",
+    "background_color": "#2c2d30",
+    "long_description": "An intelligent AI assistant designed for the Trail Bites community. Capable of creating and managing Slack canvases, writing documents, reading and answering messages, and providing helpful AI-powered responses."
+  },
+  "features": {
+    "app_home": {
+      "home_tab_enabled": true,
+      "messages_tab_enabled": true,
+      "messages_tab_read_only_enabled": false
+    },
+    "bot_user": {
+      "display_name": "Trail Bites AI Assistant",
+      "always_online": true
+    },
+    "assistant_view": {
+      "assistant_description": "An AI-powered assistant for the Trail Bites community. I can help with creating canvases, writing documents, answering questions, and more!",
+      "suggested_prompts": []
+    },
+    "slash_commands": [
+      {
+        "command": "/canvas",
+        "description": "Create, update, or manage Slack canvases",
+        "usage_hint": "create <title> | update <canvas_id> <content> | get <canvas_id>",
+        "should_escape": false
+      }
+    ]
+  },
+  "oauth_config": {
+    "redirect_urls": [],
+    "scopes": {
+      "bot": [
+        "app_mentions:read",
+        "assistant:write",
+        "canvases:read",
+        "canvases:write",
+        "channels:read",
+        "channels:history",
+        "chat:write",
+        "chat:write.public",
+        "commands",
+        "files:read",
+        "files:write",
+        "groups:history",
+        "im:history",
+        "im:read",
+        "im:write",
+        "mpim:history",
+        "reactions:read",
+        "reactions:write",
+        "search:read.files",
+        "search:read.public",
+        "team:read",
+        "users:read"
+      ]
+    }
+  },
+  "settings": {
+    "event_subscriptions": {
+      "bot_events": [
+        "app_mention",
+        "assistant_thread_started",
+        "assistant_thread_context_changed",
+        "assistant_thread_message",
+        "message.channels",
+        "message.groups",
+        "message.im",
+        "reaction_added"
+      ]
+    },
+    "interactivity": {
+      "is_enabled": false
+    },
+    "org_deploy_enabled": false,
+    "socket_mode_enabled": true,
+    "token_rotation_enabled": false
+  }
+}
